@@ -106,37 +106,7 @@
       background: var(--bege);
       color: var(--text);
       overflow-x: hidden;
-      cursor: none;
     }
-
-    /* ═══════════════════════════════════
-       CUSTOM CURSOR
-    ════════════════════════════════════ */
-    #cursor {
-      position: fixed; top: 0; left: 0; z-index: 9999;
-      width: 10px; height: 10px;
-      background: var(--azul);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: width .3s var(--ease-smooth), height .3s var(--ease-smooth),
-                  background .3s, opacity .3s;
-      will-change: transform;
-    }
-    #cursor-follower {
-      position: fixed; top: 0; left: 0; z-index: 9998;
-      width: 36px; height: 36px;
-      border: 1.5px solid rgba(122, 163, 191, 0.5);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: width .5s var(--ease-smooth), height .5s var(--ease-smooth);
-      will-change: transform;
-    }
-    body:has(a:hover) #cursor,
-    body:has(button:hover) #cursor { width: 16px; height: 16px; background: var(--gold); }
-    body:has(a:hover) #cursor-follower,
-    body:has(button:hover) #cursor-follower { width: 50px; height: 50px; }
 
     /* ═══════════════════════════════════
        PRELOADER
@@ -1407,17 +1377,12 @@
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .paliat-stats { grid-template-columns: 1fr 1fr; }
       .cta-infos { flex-direction: column; align-items: center; gap: 1rem; }
-      body { cursor: auto; }
-      #cursor, #cursor-follower { display: none; }
+
     }
   </style>
 </head>
 
 <body>
-
-  <!-- CURSOR -->
-  <div id="cursor"></div>
-  <div id="cursor-follower"></div>
 
   <!-- ═══════════════════════════
        PRELOADER
@@ -2218,24 +2183,6 @@
   <script>
     // Wait for all scripts to load
     window.addEventListener('load', () => {
-
-      /* ─── CURSOR ────────────────────────────── */
-      const cursor = document.getElementById('cursor');
-      const follower = document.getElementById('cursor-follower');
-      let mouseX = 0, mouseY = 0;
-      let followerX = 0, followerY = 0;
-
-      document.addEventListener('mousemove', e => {
-        mouseX = e.clientX; mouseY = e.clientY;
-        gsap.to(cursor, { x: mouseX, y: mouseY, duration: 0.1 });
-      });
-
-      (function animateFollower() {
-        followerX += (mouseX - followerX) * 0.12;
-        followerY += (mouseY - followerY) * 0.12;
-        gsap.set(follower, { x: followerX, y: followerY });
-        requestAnimationFrame(animateFollower);
-      })();
 
       /* ─── LENIS SMOOTH SCROLL ──────────────── */
       const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
