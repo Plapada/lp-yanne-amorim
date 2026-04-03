@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════
+       SEO — PRIMÁRIO
+  ══════════════════════════════════════════ -->
+  <title>Dra. Yanne Amorim | Pneumologista Paliativista | Cuidado que Permanece</title>
+  <meta name="description" content="Dra. Yanne Amorim — Médica Pneumologista Paliativista. Cuidado integral, humanizado e presente para pacientes com doenças respiratórias e em cuidados paliativos. Aqui, você não está só. Agende sua consulta." />
+  <meta name="keywords" content="pneumologista, cuidados paliativos, médica pneumologista paliativista, Yanne Amorim, consulta pneumologista, medicina paliativa, pneumologia, cuidado humanizado, doenças respiratórias" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yanne-amorim.com.br/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yanne-amorim.com.br/" />
+  <meta property="og:title" content="Dra. Yanne Amorim | Pneumologista Paliativista" />
+  <meta property="og:description" content="Cuidado integral e humanizado para doenças respiratórias e cuidados paliativos. Aqui, você não está só." />
+  <meta property="og:image" content="https://yanne-amorim.com.br/og-image.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dra. Yanne Amorim | Pneumologista Paliativista" />
+  <meta name="twitter:description" content="Cuidado integral e humanizado. Aqui, você não está só." />
+
+  <!-- Schema.org Physician -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dra. Yanne Amorim",
+    "description": "Médica Pneumologista Paliativista. Cuidado integral e humanizado para pacientes com doenças respiratórias e em cuidados paliativos.",
+    "medicalSpecialty": ["Pulmonology", "Palliative Care"],
+    "url": "https://yanne-amorim.com.br/",
+    "telephone": "+55-00-00000-0000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BR",
+      "addressLocality": "[cidade]"
+    },
+    "sameAs": [
+      "https://www.instagram.com/yanneamorim.med"
+    ],
+    "knowsAbout": ["Pneumologia", "Cuidados Paliativos", "Doenças Respiratórias", "Medicina Paliativa"],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Medical License",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Conselho Federal de Medicina"
+      }
+    }
+  }
+  </script>
+
+  <!-- Fonts: Noto Serif Display + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js" defer></script>
+
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <style>
+    /* ═══════════════════════════════════
+       RESET & TOKENS
+    ════════════════════════════════════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bege:   #f1ede4;
+      --bege2:  #e8e2d7;
+      --azul:   #7aa3bf;
+      --azul-dk:#4e7a99;
+      --rosa:   #f6cac4;
+      --gold:   #f6be61;
+      --dark:   #1a2c3d;
+      --dark2:  #0f1e2d;
+      --text:   #2c2a28;
+      --text-lt:#6b6660;
+      --white:  #ffffff;
+
+      --ff-serif: 'Noto Serif Display', Georgia, serif;
+      --ff-sans:  'Montserrat', system-ui, sans-serif;
+
+      --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    html { scroll-behavior: auto; } /* Lenis handles this */
+
+    body {
+      font-family: var(--ff-sans);
+      background: var(--bege);
+      color: var(--text);
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ═══════════════════════════════════
+       CUSTOM CURSOR
+    ════════════════════════════════════ */
+    #cursor {
+      position: fixed; top: 0; left: 0; z-index: 9999;
+      width: 10px; height: 10px;
+      background: var(--azul);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width .3s var(--ease-smooth), height .3s var(--ease-smooth),
+                  background .3s, opacity .3s;
+      will-change: transform;
+    }
+    #cursor-follower {
+      position: fixed; top: 0; left: 0; z-index: 9998;
+      width: 36px; height: 36px;
+      border: 1.5px solid rgba(122, 163, 191, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: width .5s var(--ease-smooth), height .5s var(--ease-smooth);
+      will-change: transform;
+    }
+    body:has(a:hover) #cursor,
+    body:has(button:hover) #cursor { width: 16px; height: 16px; background: var(--gold); }
+    body:has(a:hover) #cursor-follower,
+    body:has(button:hover) #cursor-follower { width: 50px; height: 50px; }
+
+    /* ═══════════════════════════════════
+       PRELOADER
+    ════════════════════════════════════ */
+    #preloader {
+      position: fixed; inset: 0; z-index: 10000;
+      background: var(--dark);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1.5rem;
+    }
+    #preloader .pre-name {
+      font-family: var(--ff-serif);
+      font-weight: 300;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      letter-spacing: 0.2em;
+      color: var(--bege);
+      overflow: hidden;
+    }
+    #preloader .pre-name span { display: inline-block; transform: translateY(100%); }
+    #preloader .pre-sub {
+      font-family: var(--ff-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--azul);
+      opacity: 0;
+    }
+    #preloader .pre-bar {
+      width: 120px; height: 1px;
+      background: rgba(255,255,255,.1);
+      position: relative; overflow: hidden;
+    }
+    #preloader .pre-bar::after {
+      content: '';
+      position: absolute; left: -100%; top: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* ═══════════════════════════════════
+       NAVBAR
+    ════════════════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.2rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all .4s var(--ease-smooth);
+    }
+    nav.scrolled {
+      background: rgba(241, 237, 228, 0.82);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(122, 163, 191, 0.15);
+      padding: 0.9rem 3rem;
+      box-shadow: 0 8px 32px rgba(26, 44, 61, 0.08);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.75rem;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
+      display: flex; flex-direction: column;
+      line-height: 1.1;
+    }
+    .nav-logo-text strong {
+      font-family: var(--ff-serif);
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: var(--dark);
+      letter-spacing: 0.03em;
+    }
+    .nav-logo-text span {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--azul);
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      position: relative;
+      transition: color .3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--azul);
+      transition: width .35s var(--ease-smooth);
+    }
+    .nav-links a:hover { color: var(--azul-dk); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--dark);
+      color: var(--bege) !important;
+      padding: 0.65rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.75rem !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase;
+      transition: background .3s, transform .2s !important;
+    }
+    .nav-cta:hover { background: var(--azul-dk) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+
+    .hamburger {
+      display: none; cursor: pointer;
+      flex-direction: column; gap: 5px;
+      background: none; border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 1.5px;
+      background: var(--dark);
+      transition: all .35s var(--ease-smooth);
+      transform-origin: center;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 999;
+      background: var(--dark);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 2.5rem;
+      clip-path: circle(0% at calc(100% - 3rem) 2rem);
+      transition: clip-path .7s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+    .mobile-menu.open { clip-path: circle(150% at calc(100% - 3rem) 2rem); }
+    .mobile-menu a {
+      font-family: var(--ff-serif);
+      font-weight: 300;
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      color: var(--bege);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .4s, transform .4s var(--ease-smooth), color .3s;
+    }
+    .mobile-menu.open a {
+      opacity: 1; transform: translateY(0);
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ═══════════════════════════════════
+       HERO
+    ════════════════════════════════════ */
+    #hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      position: relative; overflow: hidden;
+      padding: 7rem 3rem 5rem;
+    }
+
+    /* Organic background */
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: var(--bege);
+      z-index: 0;
+    }
+    .orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: 0.55;
+      pointer-events: none;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(122,163,191,.45), transparent 70%);
+      top: -15%; right: -5%;
+      animation: float1 12s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(246,202,196,.5), transparent 70%);
+      bottom: -10%; left: 5%;
+      animation: float2 15s ease-in-out infinite;
+    }
+    .orb-3 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(246,190,97,.3), transparent 70%);
+      top: 40%; left: 40%;
+      animation: float3 18s ease-in-out infinite;
+    }
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(-20px, 30px) scale(1.05); }
+      66%       { transform: translate(15px, -20px) scale(0.95); }
+    }
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50%       { transform: translate(25px, -40px) rotate(8deg); }
+    }
+    @keyframes float3 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50%       { transform: translate(-30px, 20px) scale(1.1); }
+    }
+
+    /* Grain texture overlay */
+    .grain {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.7rem; letter-spacing: 0.25em;
+      text-transform: uppercase; font-weight: 600;
+      color: var(--azul-dk);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 28px; height: 1px;
+      background: var(--azul);
+    }
+
+    .hero-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--azul-dk);
+    }
+    .hero-title .word { display: inline-block; overflow: hidden; }
+    .hero-title .char { display: inline-block; transform: translateY(110%); }
+
+    .hero-subtitle {
+      font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+      color: var(--text-lt);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .hero-actions {
+      display: flex; align-items: center; gap: 1rem;
+      opacity: 0; transform: translateY(20px);
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--dark);
+      color: var(--bege);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .3s var(--ease-smooth);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--azul-dk);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s var(--ease-smooth);
+      z-index: 0;
+    }
+    .btn-primary:hover::before { transform: scaleX(1); }
+    .btn-primary > * { position: relative; z-index: 1; }
+    .btn-primary svg { transition: transform .3s var(--ease-smooth); }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--dark);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all .3s;
+    }
+    .btn-ghost::after {
+      content: '';
+      display: block; width: 20px; height: 1px;
+      background: var(--dark);
+      transition: width .3s var(--ease-smooth);
+    }
+    .btn-ghost:hover { color: var(--azul-dk); }
+    .btn-ghost:hover::after { width: 32px; background: var(--azul); }
+
+    .hero-badges {
+      display: flex; gap: 1rem;
+      margin-top: 3rem;
+      opacity: 0;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 12px;
+      padding: 0.9rem 1.2rem;
+      display: flex; flex-direction: column;
+      gap: 0.2rem;
+      box-shadow: 0 8px 24px rgba(26, 44, 61, 0.08);
+    }
+    .hero-badge strong {
+      font-family: var(--ff-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .hero-badge span {
+      font-size: 0.68rem;
+      color: var(--text-lt);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Hero right side — photo placeholder */
+    .hero-visual {
+      position: relative; z-index: 2;
+      display: flex; justify-content: center; align-items: center;
+      height: 100%;
+    }
+    .hero-photo-wrap {
+      position: relative;
+      width: min(460px, 90%);
+      aspect-ratio: 3/4;
+    }
+    .hero-photo-frame {
+      width: 100%; height: 100%;
+      border-radius: 220px 220px 160px 160px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(26, 44, 61, 0.18);
+      background: linear-gradient(160deg, var(--azul) 0%, #4e7a99 50%, var(--dark) 100%);
+      position: relative;
+    }
+    .hero-photo-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .hero-photo-frame .photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, rgba(122,163,191,.6) 0%, rgba(78,122,153,.8) 40%, rgba(26,44,61,1) 100%);
+      display: flex; align-items: flex-end;
+      padding: 2rem;
+    }
+    .hero-photo-frame .photo-placeholder p {
+      color: rgba(255,255,255,.6);
+      font-size: 0.78rem;
+      font-style: italic;
+      letter-spacing: 0.05em;
+    }
+
+    /* Floating glass card over photo */
+    .hero-float-card {
+      position: absolute;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 16px;
+      padding: 1rem 1.4rem;
+      box-shadow: 0 16px 40px rgba(26,44,61,.12);
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    .float-card-crm {
+      bottom: -20px; left: -40px;
+    }
+    .float-card-exp {
+      top: 30px; right: -30px;
+    }
+    .hero-float-card .fc-icon {
+      width: 28px; height: 28px; margin-bottom: 0.4rem;
+    }
+    .hero-float-card .fc-label {
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-lt); margin-bottom: 0.15rem;
+    }
+    .hero-float-card .fc-value {
+      font-family: var(--ff-serif); font-weight: 400; font-size: 1.1rem;
+      color: var(--dark); line-height: 1.2;
+    }
+
+    /* Decorative ring */
+    .hero-ring {
+      position: absolute; top: -30px; right: -30px;
+      width: 180px; height: 180px;
+      border: 1px solid rgba(122,163,191,.3);
+      border-radius: 50%;
+      animation: spin 20s linear infinite;
+    }
+    .hero-ring::before {
+      content: '';
+      position: absolute; top: 10px; right: 10px; bottom: 10px; left: 10px;
+      border: 1px dashed rgba(246,190,97,.2);
+      border-radius: 50%;
+      animation: spin-rev 15s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes spin-rev { to { transform: rotate(-360deg); } }
+
+    /* ═══════════════════════════════════
+       MARQUEE STRIP
+    ════════════════════════════════════ */
+    .marquee-strip {
+      background: var(--dark);
+      padding: 0.9rem 0;
+      overflow: hidden;
+      position: relative; z-index: 3;
+    }
+    .marquee-track {
+      display: flex; gap: 0;
+      animation: marquee 25s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: 1.2rem;
+      padding: 0 2.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgba(241,237,228,.6);
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+    .marquee-item .dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ═══════════════════════════════════
+       MANIFESTO (DARK SECTION)
+    ════════════════════════════════════ */
+    #manifesto {
+      background: var(--dark);
+      padding: clamp(6rem, 12vw, 10rem) 3rem;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #manifesto .mf-bg-tree {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px; height: 500px;
+      opacity: 0.04; pointer-events: none;
+    }
+    .mf-eyebrow {
+      font-size: 0.68rem; letter-spacing: 0.28em;
+      text-transform: uppercase; font-weight: 600;
+      color: var(--azul);
+      margin-bottom: 2.5rem; display: block;
+    }
+    .mf-quote {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--bege);
+      line-height: 1.25;
+      max-width: 800px; margin: 0 auto 2rem;
+      letter-spacing: -0.01em;
+    }
+    .mf-quote .word { display: inline-block; overflow: hidden; }
+    .mf-quote .char { display: inline-block; transform: translateY(110%); }
+    .mf-divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2rem auto;
+    }
+    .mf-body {
+      font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+      color: rgba(241,237,228,.55);
+      line-height: 1.85;
+      max-width: 580px; margin: 0 auto 3rem;
+    }
+    .mf-promise {
+      display: inline-flex; align-items: center; gap: 1rem;
+      background: rgba(122,163,191,.12);
+      border: 1px solid rgba(122,163,191,.25);
+      border-radius: 50px;
+      padding: 0.75rem 1.75rem;
+      font-family: var(--ff-serif);
+      font-size: 1rem;
+      color: var(--azul);
+      letter-spacing: 0.05em;
+    }
+
+    /* ═══════════════════════════════════
+       SOBRE (ABOUT)
+    ════════════════════════════════════ */
+    #sobre {
+      padding: clamp(5rem, 10vw, 9rem) 3rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    #sobre::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 40%; height: 100%;
+      background: linear-gradient(to right, rgba(122,163,191,.06), transparent);
+      pointer-events: none;
+    }
+
+    .sobre-img-wrap {
+      position: relative;
+    }
+    .sobre-img-frame {
+      width: 100%; aspect-ratio: 4/5;
+      border-radius: 20px 80px 20px 80px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(26,44,61,.15);
+      background: linear-gradient(135deg, var(--azul) 0%, var(--dark) 100%);
+    }
+    .sobre-img-frame img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .sobre-img-frame .img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0.3; font-size: 0.8rem; color: white;
+      font-style: italic;
+    }
+    .sobre-accent-card {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--gold);
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      box-shadow: 0 16px 40px rgba(246,190,97,.3);
+    }
+    .sobre-accent-card strong {
+      font-family: var(--ff-serif);
+      font-size: 2.5rem; font-weight: 400;
+      color: var(--dark);
+      display: block; line-height: 1;
+    }
+    .sobre-accent-card span {
+      font-size: 0.7rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(26,44,61,.7);
+    }
+    .sobre-bg-leaf {
+      position: absolute; top: -30px; left: -30px;
+      width: 120px; height: 120px;
+      border: 1px solid rgba(122,163,191,.2);
+      border-radius: 50% 10px 50% 10px;
+      transform: rotate(-25deg);
+      animation: float2 12s ease-in-out infinite;
+    }
+
+    .sobre-content {}
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      font-size: 0.68rem; letter-spacing: 0.28em;
+      text-transform: uppercase; font-weight: 600;
+      color: var(--azul-dk);
+      margin-bottom: 1.2rem;
+    }
+    .section-eyebrow::before {
+      content: ''; display: block; width: 24px; height: 1px; background: var(--azul);
+    }
+    .section-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300; line-height: 1.15;
+      color: var(--dark); margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .section-title em { font-style: italic; color: var(--azul-dk); }
+    .section-body {
+      font-size: 0.97rem; line-height: 1.85;
+      color: var(--text-lt); margin-bottom: 2rem;
+    }
+    .sobre-credentials {
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .cred-item {
+      display: flex; align-items: center; gap: 0.9rem;
+      padding: 0.9rem 1.2rem;
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 12px;
+      transition: transform .3s var(--ease-smooth), box-shadow .3s;
+    }
+    .cred-item:hover {
+      transform: translateX(6px);
+      box-shadow: 0 8px 24px rgba(26,44,61,.08);
+    }
+    .cred-icon {
+      width: 36px; height: 36px;
+      background: var(--azul);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cred-icon svg { width: 18px; height: 18px; fill: white; }
+    .cred-text strong {
+      display: block; font-size: 0.82rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.1rem;
+    }
+    .cred-text span { font-size: 0.72rem; color: var(--text-lt); }
+
+    /* ═══════════════════════════════════
+       ESPECIALIDADES
+    ════════════════════════════════════ */
+    #especialidades {
+      padding: clamp(5rem, 10vw, 9rem) 3rem;
+      position: relative; background: var(--bege2);
+    }
+    #especialidades::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(122,163,191,.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .section-header {
+      text-align: center; margin-bottom: 4rem;
+    }
+    .section-header .section-title {
+      max-width: 600px; margin-left: auto; margin-right: auto;
+      margin-bottom: 1rem;
+    }
+    .section-header .section-body { max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* 2-column feature specialties */
+    .spec-features {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-bottom: 3rem;
+    }
+    .spec-card {
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      min-height: 360px;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem;
+      transition: transform .4s var(--ease-smooth), box-shadow .4s;
+      cursor: default;
+    }
+    .spec-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px rgba(26,44,61,.15);
+    }
+    .spec-card-pneumo {
+      background: linear-gradient(160deg, rgba(122,163,191,.3) 0%, rgba(78,122,153,.8) 50%, var(--dark) 100%);
+      border: 1px solid rgba(122,163,191,.2);
+    }
+    .spec-card-paliat {
+      background: linear-gradient(160deg, rgba(246,190,97,.25) 0%, rgba(200,140,60,.5) 50%, rgba(26,44,61,.95) 100%);
+      border: 1px solid rgba(246,190,97,.2);
+    }
+    .spec-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: inherit;
+      opacity: 0;
+      transition: opacity .4s;
+    }
+    .spec-card:hover::before { opacity: 0.1; }
+    .spec-card-bg-icon {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      width: 80px; height: 80px;
+      opacity: 0.12;
+    }
+    .spec-card-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 50px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.65rem; letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 600; color: white;
+      margin-bottom: 1rem; width: fit-content;
+    }
+    .spec-card h3 {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 300; color: white; line-height: 1.2;
+      margin-bottom: 0.8rem; letter-spacing: -0.01em;
+    }
+    .spec-card p {
+      font-size: 0.85rem; color: rgba(255,255,255,.65);
+      line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .spec-card-arrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 600; color: rgba(255,255,255,.8);
+      text-decoration: none;
+      transition: gap .3s, color .3s;
+    }
+    .spec-card-arrow:hover { gap: 0.9rem; color: white; }
+
+    /* Sub-specialties grid */
+    .spec-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .spec-mini {
+      background: rgba(255,255,255,.6);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 18px;
+      padding: 1.5rem;
+      transition: all .35s var(--ease-smooth);
+      position: relative; overflow: hidden;
+    }
+    .spec-mini::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--azul), var(--rosa));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .4s var(--ease-smooth);
+    }
+    .spec-mini:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(26,44,61,.1); }
+    .spec-mini:hover::before { transform: scaleX(1); }
+    .spec-mini-icon {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, rgba(122,163,191,.2), rgba(246,202,196,.2));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .spec-mini-icon svg { width: 22px; height: 22px; }
+    .spec-mini h4 {
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+    .spec-mini p {
+      font-size: 0.75rem; color: var(--text-lt);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════
+       CUIDADO PALIATIVO FEATURE
+    ════════════════════════════════════ */
+    #paliativo {
+      background: var(--dark2);
+      padding: clamp(5rem, 10vw, 9rem) 3rem;
+      position: relative; overflow: hidden;
+    }
+    #paliativo::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(122,163,191,.07) 0%, transparent 70%);
+    }
+    .paliat-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
+    }
+    .paliat-content .section-eyebrow { color: var(--gold); }
+    .paliat-content .section-eyebrow::before { background: var(--gold); }
+    .paliat-content .section-title { color: var(--bege); }
+    .paliat-content .section-title em { color: var(--gold); font-style: italic; }
+    .paliat-content .section-body { color: rgba(241,237,228,.55); }
+
+    .paliat-pillars {
+      display: flex; flex-direction: column; gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .paliat-pillar {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1.2rem;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 14px;
+      transition: all .3s var(--ease-smooth);
+    }
+    .paliat-pillar:hover {
+      background: rgba(122,163,191,.08);
+      border-color: rgba(122,163,191,.15);
+      transform: translateX(4px);
+    }
+    .paliat-pillar-num {
+      font-family: var(--ff-serif);
+      font-size: 2rem; font-weight: 300;
+      color: rgba(246,190,97,.3); line-height: 1;
+      flex-shrink: 0; min-width: 2ch;
+    }
+    .paliat-pillar h4 {
+      font-size: 0.9rem; font-weight: 600;
+      color: var(--bege); margin-bottom: 0.3rem;
+    }
+    .paliat-pillar p { font-size: 0.8rem; color: rgba(241,237,228,.45); line-height: 1.6; }
+
+    .paliat-visual {
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+    .paliat-quote-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+    }
+    .paliat-quote-card::before {
+      content: '\201C';
+      position: absolute; top: 1rem; left: 1.5rem;
+      font-family: var(--ff-serif);
+      font-size: 5rem; line-height: 1;
+      color: rgba(246,190,97,.2);
+      pointer-events: none;
+    }
+    .paliat-quote-card p {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem; font-weight: 300; font-style: italic;
+      color: var(--bege); line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .paliat-quote-card cite {
+      font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--azul);
+      font-style: normal;
+    }
+
+    .paliat-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .paliat-stat {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 16px; padding: 1.5rem;
+      text-align: center;
+    }
+    .paliat-stat strong {
+      display: block;
+      font-family: var(--ff-serif);
+      font-size: 2.2rem; font-weight: 300;
+      color: var(--gold); line-height: 1; margin-bottom: 0.4rem;
+    }
+    .paliat-stat span {
+      font-size: 0.7rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: rgba(241,237,228,.4);
+    }
+
+    /* ═══════════════════════════════════
+       JORNADA DO PACIENTE
+    ════════════════════════════════════ */
+    #jornada {
+      padding: clamp(5rem, 10vw, 9rem) 3rem;
+      position: relative; overflow: hidden;
+    }
+    #jornada::before {
+      content: '';
+      position: absolute; bottom: 0; right: 0;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(246,202,196,.25), transparent 70%);
+      filter: blur(60px); pointer-events: none;
+    }
+    .jornada-steps {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem; margin-top: 4rem;
+      position: relative;
+    }
+    .jornada-steps::before {
+      content: '';
+      position: absolute; top: 28px; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--azul), var(--rosa), var(--gold), transparent);
+      z-index: 0;
+    }
+    .jornada-step {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      position: relative; z-index: 1;
+      opacity: 0; transform: translateY(30px);
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--bege2);
+      border: 2px solid var(--azul);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-serif);
+      font-size: 1.3rem; font-weight: 300;
+      color: var(--azul-dk);
+      margin-bottom: 1.2rem;
+      transition: all .3s var(--ease-smooth);
+      box-shadow: 0 0 0 0 rgba(122,163,191,.0);
+    }
+    .jornada-step:hover .step-num {
+      background: var(--azul);
+      color: white;
+      box-shadow: 0 0 0 8px rgba(122,163,191,.12);
+    }
+    .step-title {
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.5rem;
+    }
+    .step-body {
+      font-size: 0.75rem; color: var(--text-lt);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════
+       DEPOIMENTOS
+    ════════════════════════════════════ */
+    #depoimentos {
+      padding: clamp(5rem, 10vw, 9rem) 3rem;
+      background: var(--bege2);
+      position: relative; overflow: hidden;
+    }
+    #depoimentos::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(ellipse 70% 50% at 30% 70%, rgba(122,163,191,.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .swiper {
+      overflow: visible !important;
+      padding: 1rem 0 3rem !important;
+    }
+    .depo-card {
+      background: rgba(255,255,255,.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 12px 40px rgba(26,44,61,.07);
+      height: auto;
+      transition: transform .4s var(--ease-smooth), box-shadow .4s;
+    }
+    .depo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 56px rgba(26,44,61,.12);
+    }
+    .depo-stars {
+      display: flex; gap: 3px; margin-bottom: 1.2rem;
+    }
+    .depo-stars svg { width: 14px; height: 14px; fill: var(--gold); }
+    .depo-text {
+      font-family: var(--ff-serif);
+      font-size: 1rem; font-weight: 300; font-style: italic;
+      color: var(--dark); line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .depo-author {
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .depo-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--azul), var(--rosa));
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-serif); font-size: 1rem; color: white;
+    }
+    .depo-author strong {
+      display: block; font-size: 0.85rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.1rem;
+    }
+    .depo-author span { font-size: 0.72rem; color: var(--text-lt); }
+
+    .swiper-pagination-bullet { background: var(--azul) !important; opacity: 0.3; }
+    .swiper-pagination-bullet-active { opacity: 1 !important; }
+
+    /* ═══════════════════════════════════
+       FAQ
+    ════════════════════════════════════ */
+    #faq {
+      padding: clamp(5rem, 10vw, 9rem) 3rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: start;
+    }
+    .faq-header .section-title { margin-bottom: 1rem; }
+    .faq-header .section-body { margin-bottom: 2rem; }
+    .faq-contact {
+      background: rgba(255,255,255,.6);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .faq-contact-icon {
+      width: 44px; height: 44px;
+      background: var(--dark);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .faq-contact-icon svg { width: 20px; height: 20px; fill: white; }
+    .faq-contact p {
+      font-size: 0.78rem; color: var(--text-lt); margin-bottom: 0.2rem;
+    }
+    .faq-contact a {
+      font-size: 0.88rem; font-weight: 600;
+      color: var(--dark); text-decoration: none;
+      transition: color .3s;
+    }
+    .faq-contact a:hover { color: var(--azul-dk); }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item {
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: box-shadow .3s;
+    }
+    .faq-item.open { box-shadow: 0 12px 32px rgba(26,44,61,.08); }
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-q span {
+      font-size: 0.9rem; font-weight: 600; color: var(--dark); line-height: 1.4;
+    }
+    .faq-q .faq-toggle {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: var(--bege2); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .3s, transform .4s var(--ease-smooth);
+    }
+    .faq-item.open .faq-toggle {
+      background: var(--azul); transform: rotate(45deg);
+    }
+    .faq-toggle svg { width: 14px; height: 14px; }
+    .faq-item.open .faq-toggle svg { fill: white; }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .45s var(--ease-smooth), padding .3s;
+      padding: 0 1.5rem;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 1.5rem 1.2rem; }
+    .faq-a p { font-size: 0.85rem; color: var(--text-lt); line-height: 1.75; }
+
+    /* ═══════════════════════════════════
+       CTA FINAL
+    ════════════════════════════════════ */
+    #cta-final {
+      padding: clamp(6rem, 12vw, 10rem) 3rem;
+      background: var(--dark);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #cta-final::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(122,163,191,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 70%, rgba(246,190,97,.06) 0%, transparent 60%);
+    }
+    .cta-badge {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: rgba(246,190,97,.1);
+      border: 1px solid rgba(246,190,97,.2);
+      border-radius: 50px;
+      padding: 0.5rem 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .cta-badge .pulse-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold);
+      animation: pulse-gold 2s ease-in-out infinite;
+    }
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(246,190,97,.4); }
+      50%       { box-shadow: 0 0 0 6px rgba(246,190,97,.0); }
+    }
+    .cta-badge span {
+      font-size: 0.72rem; letter-spacing: 0.15em;
+      text-transform: uppercase; font-weight: 600;
+      color: var(--gold);
+    }
+    .cta-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      font-weight: 300; font-style: italic;
+      color: var(--bege); line-height: 1.2;
+      margin-bottom: 1.2rem; letter-spacing: -0.01em;
+    }
+    .cta-sub {
+      font-size: 1rem; color: rgba(241,237,228,.55);
+      line-height: 1.7; max-width: 480px;
+      margin: 0 auto 3rem;
+    }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 0.8rem;
+      background: #25D366;
+      color: white;
+      padding: 1.1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      box-shadow: 0 16px 40px rgba(37,211,102,.3);
+      transition: all .3s var(--ease-smooth);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .btn-whatsapp::before {
+      content: '';
+      position: absolute; inset: 0; border-radius: 50px;
+      background: #20bd5a;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .4s var(--ease-smooth);
+      z-index: 0;
+    }
+    .btn-whatsapp:hover::before { transform: scaleX(1); }
+    .btn-whatsapp > * { position: relative; z-index: 1; }
+    .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 24px 50px rgba(37,211,102,.35); }
+
+    .cta-infos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; margin-top: 3rem; flex-wrap: wrap;
+    }
+    .cta-info-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.78rem; color: rgba(241,237,228,.4);
+    }
+    .cta-info-item svg { width: 16px; height: 16px; fill: var(--azul); flex-shrink: 0; }
+
+    /* ═══════════════════════════════════
+       FOOTER
+    ════════════════════════════════════ */
+    footer {
+      background: var(--dark2);
+      padding: 4rem 3rem 2rem;
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand .nav-logo { margin-bottom: 1rem; }
+    .footer-brand p {
+      font-size: 0.8rem; color: rgba(241,237,228,.35);
+      line-height: 1.7; max-width: 260px;
+    }
+    .footer-col h5 {
+      font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase; font-weight: 600;
+      color: rgba(241,237,228,.4); margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col ul li a {
+      font-size: 0.82rem; color: rgba(241,237,228,.55);
+      text-decoration: none; transition: color .3s;
+    }
+    .footer-col ul li a:hover { color: var(--azul); }
+    .footer-social {
+      display: flex; gap: 0.75rem; margin-top: 1.2rem;
+    }
+    .social-btn {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      transition: all .3s;
+    }
+    .social-btn:hover { background: var(--azul); border-color: var(--azul); }
+    .social-btn svg { width: 16px; height: 16px; fill: rgba(241,237,228,.6); }
+    .social-btn:hover svg { fill: white; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding-top: 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p {
+      font-size: 0.72rem; color: rgba(241,237,228,.25);
+    }
+    .footer-bottom a { color: rgba(122,163,191,.5); text-decoration: none; }
+
+    /* ═══════════════════════════════════
+       SCROLL TO TOP
+    ════════════════════════════════════ */
+    #scroll-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 800;
+      width: 44px; height: 44px;
+      background: var(--azul);
+      border-radius: 50%; border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      opacity: 0; transform: translateY(10px);
+      transition: all .35s var(--ease-smooth);
+      box-shadow: 0 8px 24px rgba(122,163,191,.3);
+    }
+    #scroll-top.visible { opacity: 1; transform: translateY(0); }
+    #scroll-top:hover { background: var(--azul-dk); transform: translateY(-2px); }
+    #scroll-top svg { width: 18px; height: 18px; fill: white; }
+
+    /* ═══════════════════════════════════
+       UTILS
+    ════════════════════════════════════ */
+    .container { max-width: 1200px; margin: 0 auto; }
+    .reveal { opacity: 0; transform: translateY(40px); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); }
+    .reveal-right { opacity: 0; transform: translateX(40px); }
+    .divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(122,163,191,.2), transparent);
+    }
+
+    /* ═══════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .spec-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links, .nav-cta-wrap { display: none; }
+      .hamburger { display: flex; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; }
+      .hero-visual { display: none; }
+      .hero-badges { flex-wrap: wrap; }
+      #sobre, #faq { grid-template-columns: 1fr; gap: 3rem; }
+      .sobre-img-wrap { max-width: 360px; }
+      .spec-features { grid-template-columns: 1fr; }
+      .paliat-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .jornada-steps { grid-template-columns: 1fr; }
+      .jornada-steps::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav.scrolled { padding: 0.9rem 1.5rem; }
+      #hero { padding: 6rem 1.25rem 3rem; }
+      #manifesto, #sobre, #especialidades, #paliativo, #jornada,
+      #depoimentos, #faq, #cta-final { padding: 4rem 1.25rem; }
+      footer { padding: 3rem 1.25rem 1.5rem; }
+      .spec-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .paliat-stats { grid-template-columns: 1fr 1fr; }
+      .cta-infos { flex-direction: column; align-items: center; gap: 1rem; }
+      body { cursor: auto; }
+      #cursor, #cursor-follower { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- ═══════════════════════════
+       PRELOADER
+  ════════════════════════════ -->
+  <div id="preloader">
+    <div class="pre-bar"></div>
+    <div class="pre-name" id="preName">
+      <span>Y</span><span>a</span><span>n</span><span>n</span><span>e</span><span>&nbsp;</span><span>A</span><span>m</span><span>o</span><span>r</span><span>i</span><span>m</span>
+    </div>
+    <p class="pre-sub">Pneumologista · Paliativista</p>
+    <div class="pre-bar"></div>
+  </div>
+
+  <!-- ═══════════════════════════
+       NAVBAR
+  ════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <!-- Tree-of-life Y logo -->
+      <svg class="nav-logo-icon" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 36 L24 52" stroke="#7aa3bf" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M24 36 L10 18" stroke="#7aa3bf" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M24 36 L38 18" stroke="#7aa3bf" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M10 18 L5 10 M10 18 L16 10" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M38 18 L32 10 M38 18 L43 10" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M24 28 C22 25 26 25 24 28Z" fill="#f6be61"/>
+        <ellipse cx="17" cy="26" rx="3" ry="4.5" fill="rgba(122,163,191,.25)" transform="rotate(-15 17 26)"/>
+        <ellipse cx="31" cy="26" rx="3" ry="4.5" fill="rgba(246,202,196,.25)" transform="rotate(15 31 26)"/>
+        <path d="M22 31 C20 29 26 29 24 31 C22 33 28 33 26 31" stroke="rgba(246,190,97,.3)" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="nav-logo-text">
+        <strong>Yanne Amorim</strong>
+        <span>Pneumologista · Paliativista</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#especialidades">Especialidades</a></li>
+      <li><a href="#paliativo">Cuidados Paliativos</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://wa.me/5500000000000?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta." class="nav-cta" target="_blank" rel="noopener">Agendar consulta</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <a href="#sobre" onclick="closeMobile()">Sobre</a>
+    <a href="#especialidades" onclick="closeMobile()">Especialidades</a>
+    <a href="#paliativo" onclick="closeMobile()">Cuidados Paliativos</a>
+    <a href="#depoimentos" onclick="closeMobile()">Depoimentos</a>
+    <a href="#faq" onclick="closeMobile()">FAQ</a>
+    <a href="https://wa.me/5500000000000" onclick="closeMobile()" target="_blank">Agendar consulta</a>
+  </div>
+
+  <!-- ═══════════════════════════
+       HERO
+  ════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="grain"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Dra. Yanne Amorim · [CRM-XX XXXXXX]</p>
+
+      <h1 class="hero-title" aria-label="Aqui, você não está só.">
+        <span class="word"><span class="char">Aqui,</span></span>
+        <br>
+        <span class="word"><span class="char">você</span></span>
+        <span class="word"><span class="char">não</span></span>
+        <span class="word"><span class="char">está</span></span>
+        <br>
+        <em><span class="word"><span class="char">só.</span></span></em>
+      </h1>
+
+      <p class="hero-subtitle">
+        Médica Pneumologista Paliativista. Cuidado integral, humanizado e presente — para cada fase da vida, com dignidade e escuta ativa.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/5500000000000?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Yanne." class="btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar consulta
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#sobre" class="btn-ghost">Conhecer a Dra. Yanne</a>
+      </div>
+
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <strong>+10</strong>
+          <span>Anos de prática</span>
+        </div>
+        <div class="hero-badge">
+          <strong>2</strong>
+          <span>Especialidades</span>
+        </div>
+        <div class="hero-badge">
+          <strong>100%</strong>
+          <span>Cuidado humanizado</span>
+        </div>
+      </div>
+    </div><!-- /hero-content -->
+
+    <div class="hero-visual">
+      <div class="hero-photo-wrap">
+        <div class="hero-ring"></div>
+        <div class="hero-photo-frame" id="heroPhoto">
+          <!-- Substitua pela foto real da Dra. Yanne: -->
+          <!-- <img src="imagens dra/foto-principal.jpg" alt="Dra. Yanne Amorim, Pneumologista Paliativista"> -->
+          <div class="photo-placeholder">
+            <p>Foto da Dra. Yanne</p>
+          </div>
+        </div>
+
+        <div class="hero-float-card float-card-crm">
+          <svg class="fc-icon" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="rgba(122,163,191,.15)"/><path d="M8 10h16M8 16h10M8 22h6" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <p class="fc-label">Registro Médico</p>
+          <p class="fc-value">[CRM-XX XXXXXX]</p>
+        </div>
+
+        <div class="hero-float-card float-card-exp">
+          <svg class="fc-icon" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="rgba(246,190,97,.15)"/><path d="M16 6v10l5 5" stroke="#f6be61" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="16" r="9" stroke="#f6be61" stroke-width="1.5" fill="none"/></svg>
+          <p class="fc-label">Atendimento</p>
+          <p class="fc-value">Presencial & <br>Telemedicina</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       MARQUEE STRIP
+  ════════════════════════════ -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <!-- Items duplicated for seamless loop -->
+      <span class="marquee-item"><span class="dot"></span>Pneumologista Especialista</span>
+      <span class="marquee-item"><span class="dot"></span>Cuidados Paliativos</span>
+      <span class="marquee-item"><span class="dot"></span>Medicina Humanizada</span>
+      <span class="marquee-item"><span class="dot"></span>Doenças Respiratórias</span>
+      <span class="marquee-item"><span class="dot"></span>Cuidado Domiciliar</span>
+      <span class="marquee-item"><span class="dot"></span>Asma & DPOC</span>
+      <span class="marquee-item"><span class="dot"></span>Suporte Paliativo</span>
+      <span class="marquee-item"><span class="dot"></span>Escuta Ativa</span>
+      <span class="marquee-item"><span class="dot"></span>Diagnóstico Preciso</span>
+      <span class="marquee-item"><span class="dot"></span>Telemedicina</span>
+      <!-- duplicate -->
+      <span class="marquee-item"><span class="dot"></span>Pneumologista Especialista</span>
+      <span class="marquee-item"><span class="dot"></span>Cuidados Paliativos</span>
+      <span class="marquee-item"><span class="dot"></span>Medicina Humanizada</span>
+      <span class="marquee-item"><span class="dot"></span>Doenças Respiratórias</span>
+      <span class="marquee-item"><span class="dot"></span>Cuidado Domiciliar</span>
+      <span class="marquee-item"><span class="dot"></span>Asma & DPOC</span>
+      <span class="marquee-item"><span class="dot"></span>Suporte Paliativo</span>
+      <span class="marquee-item"><span class="dot"></span>Escuta Ativa</span>
+      <span class="marquee-item"><span class="dot"></span>Diagnóstico Preciso</span>
+      <span class="marquee-item"><span class="dot"></span>Telemedicina</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════
+       MANIFESTO
+  ════════════════════════════ -->
+  <section id="manifesto">
+    <svg class="mf-bg-tree" viewBox="0 0 200 220" fill="none" aria-hidden="true">
+      <path d="M100 160 L100 210" stroke="white" stroke-width="4" stroke-linecap="round"/>
+      <path d="M100 160 L45 80" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M100 160 L155 80" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M45 80 L22 42 M45 80 L70 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M155 80 L130 42 M155 80 L178 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M100 140 C90 128 110 128 100 140Z" fill="white"/>
+    </svg>
+
+    <span class="mf-eyebrow reveal">Essência da Marca</span>
+    <blockquote class="mf-quote" id="mfQuote">
+      "Cuidar é permanecer."
+    </blockquote>
+    <div class="mf-divider reveal"></div>
+    <p class="mf-body reveal">
+      Permanecer quando o silêncio chega. Quando o tempo muda de ritmo. Quando a vida pede mais presença do que respostas. Cuidar não é apenas tratar sintomas. É sustentar dignidade. É olhar nos olhos. É tocar com respeito.
+    </p>
+    <div class="mf-promise reveal">
+      <svg viewBox="0 0 20 20" width="16" height="16" fill="var(--azul)"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12zm-.75-9.25a.75.75 0 011.5 0V10a.75.75 0 01-.22.53l-2 2a.75.75 0 01-1.06-1.06l1.78-1.78V6.75z"/></svg>
+      Aqui, você não está só.
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       SOBRE
+  ════════════════════════════ -->
+  <section id="sobre">
+    <div class="sobre-img-wrap reveal-left">
+      <div class="sobre-bg-leaf"></div>
+      <div class="sobre-img-frame">
+        <!-- <img src="imagens dra/foto-sobre.jpg" alt="Dra. Yanne Amorim em seu consultório"> -->
+        <div class="img-placeholder"><span>Foto da Dra. Yanne</span></div>
+      </div>
+      <div class="sobre-accent-card">
+        <strong>+10</strong>
+        <span>anos de dedicação</span>
+      </div>
+    </div>
+
+    <div class="sobre-content reveal-right">
+      <p class="section-eyebrow">Quem é a Dra. Yanne</p>
+      <h2 class="section-title">
+        Técnica que orienta,<br><em>escuta que conduz</em>
+      </h2>
+      <p class="section-body">
+        Dra. Yanne Amorim é Médica Pneumologista Paliativista com formação dedicada ao cuidado integral do ser humano. Especialista em doenças respiratórias e na qualificação do tempo de vida de pacientes em cuidados paliativos, ela une excelência técnica, presença emocional e compromisso ético.
+      </p>
+      <p class="section-body">
+        Sua medicina não nasce do desejo de ascensão profissional — ela nasce do sentido. Cada consulta é um espaço de presença genuína, onde o tempo desacelera para que você seja realmente ouvido, com clareza, sensibilidade e respeito profundo.
+      </p>
+
+      <div class="sobre-credentials">
+        <div class="cred-item">
+          <div class="cred-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>Especialização em Pneumologia</strong>
+            <span>Residência médica com título de especialista</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon" style="background: var(--gold);">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>Cuidados Paliativos</strong>
+            <span>Formação avançada em medicina paliativa e suporte ao fim de vida</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon" style="background: var(--rosa); ">
+            <svg viewBox="0 0 24 24" style="fill:#2c2a28"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>Telemedicina disponível</strong>
+            <span>Consultas online para todo o Brasil, com a mesma qualidade do presencial</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-icon" style="background: var(--azul);">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="cred-text">
+            <strong>Atendimento humanizado</strong>
+            <span>Suporte contínuo ao paciente e à família em todas as fases</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       ESPECIALIDADES
+  ════════════════════════════ -->
+  <section id="especialidades">
+    <div class="section-header">
+      <p class="section-eyebrow" style="justify-content:center">Áreas de Atuação</p>
+      <h2 class="section-title reveal">
+        Cuidado completo,<br><em>em cada dimensão</em>
+      </h2>
+      <p class="section-body reveal">
+        Da saúde respiratória aos cuidados paliativos, uma medicina que acompanha cada fase da vida com presença, técnica e humanidade.
+      </p>
+    </div>
+
+    <div class="spec-features">
+      <article class="spec-card spec-card-pneumo reveal">
+        <svg class="spec-card-bg-icon" viewBox="0 0 80 80" fill="none">
+          <path d="M20 40 C20 20 35 15 40 15 C45 15 60 20 60 40 C60 55 55 65 40 65 C25 65 20 55 20 40Z" stroke="white" stroke-width="2" fill="none"/>
+          <path d="M40 15 L40 30 M30 30 L50 30" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span class="spec-card-tag">
+          <svg viewBox="0 0 10 10" width="6" height="6"><circle cx="5" cy="5" r="5" fill="#7aa3bf"/></svg>
+          Especialidade 01
+        </span>
+        <h3>Pneumologia</h3>
+        <p>Diagnóstico e tratamento de doenças do aparelho respiratório, com abordagem integral e personalizada para cada paciente.</p>
+        <a href="https://wa.me/5500000000000" class="spec-card-arrow" target="_blank" rel="noopener">
+          Agendar consulta
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <article class="spec-card spec-card-paliat reveal">
+        <svg class="spec-card-bg-icon" viewBox="0 0 80 80" fill="none">
+          <path d="M40 60 C25 50 15 38 25 28 C30 23 38 24 40 28 C42 24 50 23 55 28 C65 38 55 50 40 60Z" stroke="white" stroke-width="2" fill="none"/>
+          <path d="M40 20 L40 10 M40 10 L34 16 M40 10 L46 16" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="spec-card-tag">
+          <svg viewBox="0 0 10 10" width="6" height="6"><circle cx="5" cy="5" r="5" fill="#f6be61"/></svg>
+          Especialidade 02
+        </span>
+        <h3>Cuidados<br>Paliativos</h3>
+        <p>Suporte integral ao paciente e à família, priorizando qualidade de vida, dignidade e presença em todas as fases do cuidado.</p>
+        <a href="#paliativo" class="spec-card-arrow">
+          Saiba mais
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+    </div>
+
+    <div class="spec-grid">
+      <div class="spec-mini reveal">
+        <div class="spec-mini-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"><path d="M12 22V12M12 12C12 7 7 4 4 6M12 12C12 7 17 4 20 6"/></svg>
+        </div>
+        <h4>Asma</h4>
+        <p>Diagnóstico e controle da asma, prevenindo crises e garantindo qualidade de vida.</p>
+      </div>
+      <div class="spec-mini reveal">
+        <div class="spec-mini-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"><path d="M4 12C4 7.58 7.58 4 12 4M20 12C20 16.42 16.42 20 12 20"/><path d="M12 4C14.21 4 16 7.58 16 12C16 16.42 14.21 20 12 20C9.79 20 8 16.42 8 12"/></svg>
+        </div>
+        <h4>DPOC</h4>
+        <p>Manejo da Doença Pulmonar Obstrutiva Crônica com tratamento moderno e contínuo.</p>
+      </div>
+      <div class="spec-mini reveal">
+        <div class="spec-mini-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f6cac4" stroke-width="1.8" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h4>Nódulos Pulmonares</h4>
+        <p>Investigação e acompanhamento de achados pulmonares com rigor diagnóstico.</p>
+      </div>
+      <div class="spec-mini reveal">
+        <div class="spec-mini-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f6be61" stroke-width="1.8" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h4>Dor Crônica</h4>
+        <p>Suporte paliativo especializado no controle de dor e sintomas desconfortáveis.</p>
+      </div>
+      <div class="spec-mini reveal">
+        <div class="spec-mini-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h4>Pneumonias</h4>
+        <p>Diagnóstico rápido e tratamento eficaz de infecções respiratórias bacterianas e virais.</p>
+      </div>
+      <div class="spec-mini reveal">
+        <div class="spec-mini-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f6cac4" stroke-width="1.8" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h4>Suporte à Família</h4>
+        <p>Acolhimento e orientação à família nos processos de cuidado e tomada de decisão.</p>
+      </div>
+      <div class="spec-mini reveal">
+        <div class="spec-mini-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f6be61" stroke-width="1.8" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Cuidado Domiciliar</h4>
+        <p>Orientação e suporte para pacientes em cuidados no próprio lar, com segurança e conforto.</p>
+      </div>
+      <div class="spec-mini reveal">
+        <div class="spec-mini-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h4>Telemedicina</h4>
+        <p>Consultas online com a mesma qualidade, para você ser atendido onde estiver.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       CUIDADOS PALIATIVOS FEATURE
+  ════════════════════════════ -->
+  <section id="paliativo">
+    <div class="paliat-grid">
+      <div class="paliat-content">
+        <p class="section-eyebrow reveal">Cuidados Paliativos</p>
+        <h2 class="section-title reveal">
+          A marca não fala de morte.<br><em>Ela fala de vida</em><br>até o último instante.
+        </h2>
+        <p class="section-body reveal">
+          Os cuidados paliativos não se restringem ao fim de vida. São uma abordagem ativa e integral que melhora a qualidade de vida de pacientes e familiares diante de doenças que ameaçam a continuidade da vida.
+        </p>
+
+        <div class="paliat-pillars">
+          <div class="paliat-pillar reveal">
+            <span class="paliat-pillar-num">01</span>
+            <div>
+              <h4>Controle de sintomas</h4>
+              <p>Manejo eficaz da dor, dispneia, fadiga e outros sintomas que comprometem o bem-estar.</p>
+            </div>
+          </div>
+          <div class="paliat-pillar reveal">
+            <span class="paliat-pillar-num">02</span>
+            <div>
+              <h4>Suporte emocional e espiritual</h4>
+              <p>Presença ativa e acolhimento nas dimensões mais profundas do cuidado humano.</p>
+            </div>
+          </div>
+          <div class="paliat-pillar reveal">
+            <span class="paliat-pillar-num">03</span>
+            <div>
+              <h4>Apoio à família</h4>
+              <p>Orientação, escuta e suporte para que a família também seja cuidada neste processo.</p>
+            </div>
+          </div>
+          <div class="paliat-pillar reveal">
+            <span class="paliat-pillar-num">04</span>
+            <div>
+              <h4>Planejamento antecipado de cuidados</h4>
+              <p>Respeito às preferências e valores do paciente em cada decisão clínica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="paliat-visual reveal-right">
+        <div class="paliat-quote-card">
+          <p>
+            "H á vida em cada instante. E cada instante merece cuidado."
+          </p>
+          <cite>Dra. Yanne Amorim · Manifesto da Marca</cite>
+        </div>
+
+        <div class="paliat-stats">
+          <div class="paliat-stat reveal">
+            <strong>24h</strong>
+            <span>suporte contínuo</span>
+          </div>
+          <div class="paliat-stat reveal">
+            <strong>360°</strong>
+            <span>cuidado integral</span>
+          </div>
+          <div class="paliat-stat reveal">
+            <strong>família</strong>
+            <span>também é cuidada</span>
+          </div>
+          <div class="paliat-stat reveal">
+            <strong>dignidade</strong>
+            <span>em cada fase</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       JORNADA DO PACIENTE
+  ════════════════════════════ -->
+  <section id="jornada">
+    <div class="section-header">
+      <p class="section-eyebrow" style="justify-content:center">Como funciona</p>
+      <h2 class="section-title reveal">A jornada do <em>seu cuidado</em></h2>
+      <p class="section-body reveal">Do primeiro contato ao acompanhamento contínuo, cada etapa foi pensada para que você se sinta seguro e acolhido.</p>
+    </div>
+
+    <div class="jornada-steps">
+      <div class="jornada-step">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Primeiro contato</h3>
+        <p class="step-body">Entre em contato via WhatsApp. Nossa equipe vai orientar você sobre o agendamento e o que trazer.</p>
+      </div>
+      <div class="jornada-step">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Consulta inicial</h3>
+        <p class="step-body">Consulta completa com escuta ativa, anamnese detalhada e exame clínico minucioso.</p>
+      </div>
+      <div class="jornada-step">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Diagnóstico</h3>
+        <p class="step-body">Investigação baseada em evidências, com solicitação de exames quando necessário e explicação clara de cada etapa.</p>
+      </div>
+      <div class="jornada-step">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Plano de cuidado</h3>
+        <p class="step-body">Plano terapêutico personalizado, construído junto com você, respeitando seus valores e preferências.</p>
+      </div>
+      <div class="jornada-step">
+        <div class="step-num">05</div>
+        <h3 class="step-title">Acompanhamento</h3>
+        <p class="step-body">Presença contínua ao longo do tratamento, com retornos regulares e suporte entre consultas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       DEPOIMENTOS
+  ════════════════════════════ -->
+  <section id="depoimentos">
+    <div class="section-header">
+      <p class="section-eyebrow" style="justify-content:center">Depoimentos</p>
+      <h2 class="section-title reveal">O que dizem <em>os pacientes</em></h2>
+      <p class="section-body reveal">Palavras de quem viveu o cuidado da Dra. Yanne de perto.</p>
+    </div>
+
+    <div class="swiper depoSwiper reveal">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="depo-card">
+            <div class="depo-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="depo-text">"A Dra. Yanne não apenas tratou a minha mãe — ela nos acompanhou. Pela primeira vez sentimos que não estávamos sozinhos nesse processo tão difícil. Uma médica excepcional e um ser humano ainda mais extraordinário."</p>
+            <div class="depo-author">
+              <div class="depo-avatar">M</div>
+              <div>
+                <strong>Mariana S.</strong>
+                <span>Familiar de paciente em cuidados paliativos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="depo-card">
+            <div class="depo-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="depo-text">"Sofro com asma há 15 anos e nunca tive um acompanhamento tão completo. A Dra. Yanne explicou cada detalhe do tratamento, me ouviu de verdade e o resultado foi uma melhora enorme na minha qualidade de vida."</p>
+            <div class="depo-author">
+              <div class="depo-avatar" style="background: linear-gradient(135deg, var(--gold), #e8a020)">R</div>
+              <div>
+                <strong>Roberto A.</strong>
+                <span>Paciente de pneumologia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="depo-card">
+            <div class="depo-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="depo-text">"Meu pai estava em estado crítico e a Dra. Yanne conduziu o caso com uma serenidade e competência que nos transmitiu muita paz. Ela é tudo que um médico deveria ser: técnica, humana e presente."</p>
+            <div class="depo-author">
+              <div class="depo-avatar" style="background: linear-gradient(135deg, #7aa3bf, #4e7a99)">C</div>
+              <div>
+                <strong>Carla P.</strong>
+                <span>Filha de paciente em cuidados paliativos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="depo-card">
+            <div class="depo-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="depo-text">"Consulta via telemedicina e fiquei impressionado com a qualidade do atendimento. A Dra. Yanne é extremamente atenciosa, explica tudo com clareza e passa uma segurança incrível."</p>
+            <div class="depo-author">
+              <div class="depo-avatar" style="background: linear-gradient(135deg, var(--rosa), #d4807a)">L</div>
+              <div>
+                <strong>Lucas F.</strong>
+                <span>Paciente via telemedicina</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="depo-card">
+            <div class="depo-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="depo-text">"Profissional ímpar. Aliada ao seu conhecimento técnico impecável, a Dra. Yanne tem uma habilidade rara de fazer o paciente se sentir verdadeiramente cuidado. Recomendo sem hesitar."</p>
+            <div class="depo-author">
+              <div class="depo-avatar" style="background: linear-gradient(135deg, #5a8a6a, #3d6b50)">A</div>
+              <div>
+                <strong>Ana R.</strong>
+                <span>Paciente de pneumologia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /swiper-wrapper -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       FAQ
+  ════════════════════════════ -->
+  <section id="faq">
+    <div class="faq-header">
+      <p class="section-eyebrow">Perguntas frequentes</p>
+      <h2 class="section-title reveal">Suas <em>dúvidas</em>,<br>respondidas</h2>
+      <p class="section-body">Qualquer outra dúvida, entre em contato. Estamos aqui para ajudar.</p>
+      <div class="faq-contact">
+        <div class="faq-contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div>
+          <p>Ainda tem dúvidas?</p>
+          <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">Fale pelo WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>Quando devo consultar um pneumologista?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a" role="region"><p>Você deve consultar um pneumologista se apresentar tosse persistente há mais de 3 semanas, falta de ar frequente, chiado no peito, dor torácica, infecções respiratórias de repetição, ou se tiver diagnóstico de asma, DPOC ou outros problemas pulmonares que precisam de acompanhamento especializado.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>O que são cuidados paliativos?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a" role="region"><p>Cuidados paliativos são uma abordagem que melhora a qualidade de vida de pacientes e seus familiares diante de doenças que ameaçam a vida. Não se limitam ao final de vida — podem (e devem) ser iniciados desde o diagnóstico. Incluem controle de dor e sintomas, suporte emocional, espiritual e ao núcleo familiar.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>A Dra. Yanne atende por telemedicina?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a" role="region"><p>Sim! A Dra. Yanne realiza consultas online para todo o Brasil, com a mesma qualidade e atenção das consultas presenciais. A telemedicina é uma forma segura, prática e reconhecida pelo CFM de acessar cuidados especializados sem deslocamento.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>Como agendar uma consulta?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a" role="region"><p>O agendamento é feito diretamente pelo WhatsApp. Basta clicar em qualquer botão "Agendar consulta" nesta página. Nossa equipe vai orientar você sobre os próximos passos, documentos necessários e confirmar o horário mais conveniente para você.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>Quais documentos devo trazer na primeira consulta?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a" role="region"><p>Traga documentos de identidade, cartão do plano de saúde (se houver), exames anteriores relacionados ao pulmão ou à condição que motivou a consulta, lista de medicamentos em uso e receitas recentes. Se for de cuidados paliativos, inclua laudos médicos e prontuários disponíveis.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>A Dra. Yanne aceita plano de saúde?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        </div>
+        <div class="faq-a" role="region"><p>Entre em contato via WhatsApp para verificar os convênios aceitos e condições de atendimento particular. Nossa equipe terá prazer em informar todos os detalhes sobre formas de pagamento e convênios disponíveis.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       CTA FINAL
+  ════════════════════════════ -->
+  <section id="cta-final">
+    <div style="position:relative; z-index:2">
+      <div class="cta-badge reveal">
+        <span class="pulse-dot"></span>
+        <span>Consultas disponíveis</span>
+      </div>
+      <h2 class="cta-title reveal">"Aqui, você<br>não está só."</h2>
+      <p class="cta-sub reveal">Dê o primeiro passo. Uma consulta pode ser o início de um cuidado que transforma e qualifica a sua vida.</p>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:.5rem">
+        <a href="https://wa.me/5500000000000?text=Olá%20Dra.%20Yanne%2C%20gostaria%20de%20agendar%20uma%20consulta." class="btn-whatsapp reveal" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <span style="font-size:.72rem; color:rgba(241,237,228,.3); letter-spacing:.08em">Resposta em até 24h</span>
+      </div>
+      <div class="cta-infos">
+        <span class="cta-info-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.6 1.25h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 8.5a16 16 0 006 6l.91-.91a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Consulta presencial e online
+        </span>
+        <span class="cta-info-item">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Sigilo médico garantido
+        </span>
+        <span class="cta-info-item">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          Cuidado humanizado
+        </span>
+        <span class="cta-info-item">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          Suporte à família
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════
+       FOOTER
+  ════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:1rem">
+          <svg class="nav-logo-icon" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M24 36 L24 52" stroke="#7aa3bf" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M24 36 L10 18" stroke="#7aa3bf" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M24 36 L38 18" stroke="#7aa3bf" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M10 18 L5 10 M10 18 L16 10" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M38 18 L32 10 M38 18 L43 10" stroke="#7aa3bf" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div class="nav-logo-text">
+            <strong style="color:var(--bege)">Yanne Amorim</strong>
+            <span>Pneumologista · Paliativista</span>
+          </div>
+        </a>
+        <p>Médica Pneumologista Paliativista. Cuidado integral, humano e presente em cada fase da vida.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/5500000000000" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <ul>
+          <li><a href="#sobre">Sobre a Dra. Yanne</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#paliativo">Cuidados Paliativos</a></li>
+          <li><a href="#jornada">Como funciona</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#faq">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Especialidades</h5>
+        <ul>
+          <li><a href="#especialidades">Pneumologia</a></li>
+          <li><a href="#paliativo">Cuidados Paliativos</a></li>
+          <li><a href="#especialidades">Asma & DPOC</a></li>
+          <li><a href="#especialidades">Nódulos Pulmonares</a></li>
+          <li><a href="#especialidades">Dor Crônica</a></li>
+          <li><a href="#especialidades">Telemedicina</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">[cidade]</a></li>
+        </ul>
+        <div style="margin-top:1.5rem; padding:1rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); border-radius:12px">
+          <p style="font-size:.7rem; color:rgba(241,237,228,.3); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.4rem">Registro Profissional</p>
+          <p style="font-size:.82rem; color:rgba(241,237,228,.5)">[CRM-XX XXXXXX]</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Dra. Yanne Amorim. Todos os direitos reservados.</p>
+      <p>As informações deste site têm caráter informativo e não substituem consulta médica. <a href="#">Política de Privacidade</a></p>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="scroll-top" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- ═══════════════════════════
+       SCRIPTS
+  ════════════════════════════ -->
+  <script>
+    // Wait for all scripts to load
+    window.addEventListener('load', () => {
+
+      /* ─── CURSOR ────────────────────────────── */
+      const cursor = document.getElementById('cursor');
+      const follower = document.getElementById('cursor-follower');
+      let mouseX = 0, mouseY = 0;
+      let followerX = 0, followerY = 0;
+
+      document.addEventListener('mousemove', e => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        gsap.to(cursor, { x: mouseX, y: mouseY, duration: 0.1 });
+      });
+
+      (function animateFollower() {
+        followerX += (mouseX - followerX) * 0.12;
+        followerY += (mouseY - followerY) * 0.12;
+        gsap.set(follower, { x: followerX, y: followerY });
+        requestAnimationFrame(animateFollower);
+      })();
+
+      /* ─── LENIS SMOOTH SCROLL ──────────────── */
+      const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(time => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+
+      /* ─── GSAP ─────────────────────────────── */
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* ─── PRELOADER ─────────────────────────── */
+      const preloader = document.getElementById('preloader');
+      const preChars  = preloader.querySelectorAll('.pre-name span');
+      const preSub    = preloader.querySelector('.pre-sub');
+      const preBar    = preloader.querySelectorAll('.pre-bar');
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          gsap.to(preloader, {
+            yPercent: -100, duration: 0.9,
+            ease: 'power3.inOut',
+            onComplete: () => { preloader.style.display = 'none'; }
+          });
+        }
+      });
+
+      tl.to(preBar[0].querySelector ? preBar : preBar, { scaleX: 1, duration: 1, ease: 'power2.inOut' })
+        .to(preChars, {
+          y: 0, stagger: 0.06, duration: 0.7,
+          ease: 'power3.out'
+        }, '-=0.3')
+        .to(preSub, { opacity: 1, y: 0, duration: 0.5 }, '-=0.2')
+        .to({}, { duration: 0.6 }) // pause
+        .to([preChars, preSub], { opacity: 0, y: -20, stagger: 0.03, duration: 0.4, ease: 'power2.in' });
+
+      /* ─── NAVBAR SCROLL ─────────────────────── */
+      const navbar = document.getElementById('navbar');
+      ScrollTrigger.create({
+        start: 'top+=80',
+        onEnter:  () => navbar.classList.add('scrolled'),
+        onLeaveBack: () => navbar.classList.remove('scrolled')
+      });
+
+      /* ─── HERO ANIMATIONS ──────────────────── */
+      const heroTl = gsap.timeline({ delay: 2.2 });
+
+      heroTl
+        .to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+        .to('.hero-title .char', {
+          y: 0, stagger: 0.05, duration: 0.9,
+          ease: 'power3.out'
+        }, '-=0.4')
+        .to('.hero-subtitle', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3')
+        .to('.hero-actions', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3')
+        .to('.hero-badges', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.2')
+        .to('.hero-float-card', { opacity: 1, y: 0, stagger: 0.15, duration: 0.7, ease: 'back.out(1.5)' }, '-=0.4');
+
+      /* ─── HERO PARALLAX ─────────────────────── */
+      gsap.to('#heroPhoto', {
+        yPercent: -12,
+        ease: 'none',
+        scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1.5 }
+      });
+
+      /* ─── MANIFESTO TEXT ────────────────────── */
+      const mfQuote = document.getElementById('mfQuote');
+      // Simple word-by-word reveal using split
+      const mfWords = mfQuote.textContent.trim().split(' ');
+      mfQuote.innerHTML = mfWords.map(w => `<span class="mf-word" style="display:inline-block; overflow:hidden; margin-right:.3em"><span style="display:inline-block; transform:translateY(110%)">${w}</span></span>`).join('');
+
+      gsap.to('#manifesto .mf-word span', {
+        y: 0, stagger: 0.06, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: { trigger: '#manifesto', start: 'top 70%' }
+      });
+
+      /* ─── GENERIC REVEAL ────────────────────── */
+      gsap.utils.toArray('.reveal').forEach(el => {
+        gsap.fromTo(el,
+          { opacity: 0, y: 40 },
+          { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 85%' }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.reveal-left').forEach(el => {
+        gsap.fromTo(el,
+          { opacity: 0, x: -50 },
+          { opacity: 1, x: 0, duration: 1, ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 80%' }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.reveal-right').forEach(el => {
+        gsap.fromTo(el,
+          { opacity: 0, x: 50 },
+          { opacity: 1, x: 0, duration: 1, ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 80%' }
+          }
+        );
+      });
+
+      /* ─── JORNADA STEPS ─────────────────────── */
+      gsap.utils.toArray('.jornada-step').forEach((step, i) => {
+        gsap.to(step, {
+          opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+          delay: i * 0.12,
+          scrollTrigger: { trigger: '.jornada-steps', start: 'top 75%' }
+        });
+      });
+
+      /* ─── SPEC MINI CARDS STAGGER ──────────── */
+      gsap.from('.spec-mini', {
+        opacity: 0, y: 30, scale: 0.96, stagger: 0.08, duration: 0.7, ease: 'power3.out',
+        scrollTrigger: { trigger: '.spec-grid', start: 'top 80%' }
+      });
+
+      /* ─── SOBRE PARALLAX ────────────────────── */
+      gsap.to('.sobre-img-frame', {
+        yPercent: -8,
+        ease: 'none',
+        scrollTrigger: { trigger: '#sobre', start: 'top bottom', end: 'bottom top', scrub: 2 }
+      });
+
+      /* ─── COUNTER ANIMATION ─────────────────── */
+      function animateCounter(el) {
+        const target = parseInt(el.textContent);
+        if (isNaN(target)) return;
+        gsap.fromTo({ n: 0 }, { n: target }, {
+          n: target, duration: 2, ease: 'power2.out',
+          onUpdate: function() { el.textContent = Math.round(this.targets()[0].n) + '+'; },
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+        });
+      }
+      document.querySelectorAll('.sobre-accent-card strong').forEach(animateCounter);
+
+      /* ─── SCROLL TO TOP ─────────────────────── */
+      const scrollTopBtn = document.getElementById('scroll-top');
+      ScrollTrigger.create({
+        start: 'top-=600',
+        onEnter:     () => scrollTopBtn.classList.add('visible'),
+        onLeaveBack: () => scrollTopBtn.classList.remove('visible')
+      });
+      scrollTopBtn.addEventListener('click', () => lenis.scrollTo(0, { duration: 1.5 }));
+
+      /* ─── SWIPER ────────────────────────────── */
+      new Swiper('.depoSwiper', {
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        centeredSlides: true,
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        breakpoints: {
+          640:  { slidesPerView: 1.6, spaceBetween: 24 },
+          900:  { slidesPerView: 2.4, spaceBetween: 28 },
+          1200: { slidesPerView: 3,   spaceBetween: 28 }
+        }
+      });
+
+      /* ─── FAQ ACCORDION ─────────────────────── */
+      document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', () => {
+          const item = q.closest('.faq-item');
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+        q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') q.click(); });
+      });
+
+      /* ─── MOBILE MENU ──────────────────────── */
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      hamburger.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', open);
+        // Animate bars
+        const bars = hamburger.querySelectorAll('span');
+        if (open) {
+          gsap.to(bars[0], { rotation: 45, y: 6.5, duration: .3 });
+          gsap.to(bars[1], { opacity: 0, scaleX: 0, duration: .3 });
+          gsap.to(bars[2], { rotation: -45, y: -6.5, duration: .3 });
+        } else {
+          gsap.to(bars[0], { rotation: 0, y: 0, duration: .3 });
+          gsap.to(bars[1], { opacity: 1, scaleX: 1, duration: .3 });
+          gsap.to(bars[2], { rotation: 0, y: 0, duration: .3 });
+        }
+      });
+
+    }); // /load
+
+    function closeMobile() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const hamburger  = document.getElementById('hamburger');
+      const bars = hamburger.querySelectorAll('span');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      if (window.gsap) {
+        gsap.to(bars[0], { rotation: 0, y: 0, duration: .3 });
+        gsap.to(bars[1], { opacity: 1, scaleX: 1, duration: .3 });
+        gsap.to(bars[2], { rotation: 0, y: 0, duration: .3 });
+      }
+    }
+
+    /* Nav smooth scroll */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const lenis = window.__lenis;
+          if (lenis) lenis.scrollTo(target);
+          else target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
