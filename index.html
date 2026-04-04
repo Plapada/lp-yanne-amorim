@@ -798,6 +798,7 @@
       background: inherit;
       opacity: 0;
       transition: opacity .4s;
+      pointer-events: none;
     }
     .spec-card:hover::before { opacity: 0.1; }
     .spec-card-bg-icon {
@@ -2186,6 +2187,7 @@
 
       /* ─── LENIS SMOOTH SCROLL ──────────────── */
       const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+      window.__lenis = lenis;
       function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
       requestAnimationFrame(raf);
       lenis.on('scroll', ScrollTrigger.update);
