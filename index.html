@@ -748,6 +748,7 @@
     #especialidades {
       padding: clamp(5rem, 10vw, 9rem) 3rem;
       position: relative; background: var(--bege2);
+      display: flex; flex-direction: column; align-items: center;
     }
     #especialidades::before {
       content: '';
@@ -757,7 +758,7 @@
     }
     .section-header {
       text-align: center; margin-bottom: 4rem;
-      max-width: 1200px; margin-left: auto; margin-right: auto;
+      width: 100%; max-width: 1200px;
     }
     .section-header .section-title {
       max-width: 600px; margin-left: auto; margin-right: auto;
@@ -768,8 +769,8 @@
     /* 2-column feature specialties */
     .spec-features {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2rem; margin-bottom: 0;
-      max-width: 1200px; margin-left: auto; margin-right: auto;
+      gap: 2rem;
+      width: 100%; max-width: 1200px;
     }
     .spec-card {
       border-radius: 24px;
@@ -841,8 +842,8 @@
     .spec-grid {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
-      margin-top: 5rem;
-      max-width: 1200px; margin-left: auto; margin-right: auto;
+      width: 100%; max-width: 1200px;
+      margin-top: 3rem;
     }
     .spec-mini {
       background: rgba(255,255,255,.6);
