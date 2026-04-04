@@ -767,7 +767,7 @@
     /* 2-column feature specialties */
     .spec-features {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2rem; margin-bottom: 3rem;
+      gap: 2rem; margin-bottom: 0;
     }
     .spec-card {
       border-radius: 24px;
@@ -839,6 +839,7 @@
     .spec-grid {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
+      margin-top: 5rem;
     }
     .spec-mini {
       background: rgba(255,255,255,.6);
@@ -1374,7 +1375,7 @@
       #manifesto, #sobre, #especialidades, #paliativo, #jornada,
       #depoimentos, #faq, #cta-final { padding: 4rem 1.25rem; }
       footer { padding: 3rem 1.25rem 1.5rem; }
-      .spec-grid { grid-template-columns: 1fr; }
+      .spec-grid { grid-template-columns: 1fr; margin-top: 3rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .paliat-stats { grid-template-columns: 1fr 1fr; }
       .cta-infos { flex-direction: column; align-items: center; gap: 1rem; }
