@@ -1226,7 +1226,7 @@
     }
     .loc-grid {
       display: grid; grid-template-columns: 1fr 1.4fr;
-      gap: 3rem; align-items: start;
+      gap: 3rem; align-items: stretch;
       max-width: 1200px; margin: 0 auto;
       position: relative; z-index: 1;
     }
@@ -1277,9 +1277,11 @@
       box-shadow: 0 20px 60px rgba(26,44,61,.14);
       position: relative;
       border: 1px solid rgba(255,255,255,.7);
+      min-height: 440px;
     }
     .loc-map-wrap iframe {
-      width: 100%; height: 440px;
+      width: 100%; height: 100%;
+      position: absolute; inset: 0;
       display: block; border: none;
       filter: saturate(0.85) contrast(0.95);
       transition: filter .3s;
