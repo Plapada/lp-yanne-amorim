@@ -1164,6 +1164,16 @@
         radial-gradient(ellipse 40% 30% at 20% 20%, rgba(122,163,191,.06), transparent),
         linear-gradient(180deg, var(--bege) 0%, var(--bege2) 100%);
     }
+    #jornada .section-eyebrow { color: var(--azul-dk); }
+    #jornada .section-eyebrow::before { background: var(--azul); }
+    #jornada .section-title { color: var(--dark); }
+    #jornada .section-title em {
+      background: linear-gradient(135deg, var(--azul-dk), var(--azul-deep));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    #jornada .section-body { color: var(--text-lt); }
 
     .jornada-steps {
       display: grid; grid-template-columns: repeat(5, 1fr);
@@ -2127,7 +2137,7 @@
     <div class="section-header" style="max-width:1200px;margin-left:auto;margin-right:auto">
       <p class="section-eyebrow" style="justify-content:center">Como funciona</p>
       <h2 class="section-title reveal">A jornada do <em>seu cuidado</em></h2>
-      <p class="section-body reveal">Do primeiro contato ao acompanhamento continuo &mdash; cada etapa pensada para você.</p>
+      <p class="section-body reveal">Do primeiro contato ao acompanhamento contínuo &mdash; cada etapa pensada para você.</p>
     </div>
 
     <div class="jornada-steps">
@@ -2180,7 +2190,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="depo-text">&ldquo;A Dra. Yanne nao apenas tratou a minha mae &mdash; ela nos acompanhou. Pela primeira vez sentimos que não estávamos sozinhos nesse processo tão difícil.&rdquo;</p>
+            <p class="depo-text">&ldquo;A Dra. Yanne não apenas tratou a minha mãe &mdash; ela nos acompanhou. Pela primeira vez sentimos que não estávamos sozinhos nesse processo tão difícil.&rdquo;</p>
             <div class="depo-author">
               <div class="depo-avatar">M</div>
               <div>
@@ -2336,7 +2346,7 @@
           <span>Cuidados paliativos significam desistir do tratamento?</span>
           <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
         </div>
-        <div class="faq-a" role="region"><p>Nao. Cuidados paliativos não significam desistência &mdash; significam uma escolha ativa pelo que ainda e possível: qualidade de vida, controle de sintomas e dignidade.</p></div>
+        <div class="faq-a" role="region"><p>Não. Cuidados paliativos não significam desistência &mdash; significam uma escolha ativa pelo que ainda e possível: qualidade de vida, controle de sintomas e dignidade.</p></div>
       </div>
     </div>
   </section>
@@ -2426,7 +2436,7 @@
       <span class="pulse-dot"></span>
       <span>Consultas disponíveis</span>
     </div>
-    <h2 class="cta-title reveal">&ldquo;Aqui, você<br>nao esta so.&rdquo;</h2>
+    <h2 class="cta-title reveal">&ldquo;Aqui, você<br>não está só.&rdquo;</h2>
     <p class="cta-sub reveal">Dê o primeiro passo. Uma consulta pode ser o início de um cuidado que muda a forma como você vive &mdash; com mais qualidade, dignidade e presenca.</p>
 
     <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Dra.%20Yanne%2C%20gostaria%20de%20agendar%20uma%20consulta." class="btn-whatsapp reveal" target="_blank" rel="noopener">
