@@ -2,3 +2,41 @@
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Playwright CLI cache
+.playwright-cli/
+
+# PDF source (large file)
+*.pdf
+
+# Prompts (dev only)
+prompts/
+
+# PDF extracted assets not used in production
+assets/pdf-render-*
+assets/pdf-img-p1-*
+assets/pdf-img-p3-*
+assets/pdf-img-p10-*
+assets/pdf-img-p13-*
+assets/pdf-img-p18-*
+assets/pdf-img-p20-*
+assets/pdf-img-p21-*
+assets/pdf-img-p25-*
+assets/pdf-img-p27-*
+assets/pdf-img-p33-*
+assets/pdf-img-p34-*
+assets/pdf-img-p35-*
+assets/pdf-img-p36-*
+assets/pdf-img-p37-*
+assets/pdf-img-p40-*
+assets/pdf-img-p41-*
+assets/pdf-img-p42-*
+assets/pdf-img-p44-*
+assets/pdf-img-p45-*
+assets/pdf-img-p46-*
+assets/pdf-img-p47-*
+assets/pdf-img-p48-*
+assets/pdf-img-p49-*
+assets/pdf-img-p50-*
+assets/pdf-img-p51-*
+assets/pdf-page1.png
