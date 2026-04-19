@@ -12,6 +12,9 @@ Thumbs.db
 # Prompts (dev only)
 prompts/
 
+# Brand source folder (working files — not for production)
+Yanne Amorim/
+
 # PDF extracted assets not used in production
 assets/pdf-render-*
 assets/pdf-img-p1-*
