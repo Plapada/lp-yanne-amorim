@@ -43,3 +43,6 @@ assets/pdf-img-p49-*
 assets/pdf-img-p50-*
 assets/pdf-img-p51-*
 assets/pdf-page1.png
+.env.tmp
+check-*.png
+assets/generated/test_orchid.png
