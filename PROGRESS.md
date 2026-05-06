@@ -4,7 +4,7 @@
 Landing page cinematográfica para Dra. Yanne Amorim — Médica Pneumologista Paliativista, com identidade visual completa da marca e fotos reais.
 
 ## Status
-Done — LP v2 cinematográfica editorial completa com fotos reais.
+Done — LP v2 cinematográfica + reposicionamento editorial focado em Medicina Paliativa (pneumologia reduzida a menção discreta).
 
 ## Completed
 ### V1 (arquivada)
@@ -33,6 +33,18 @@ Done — LP v2 cinematográfica editorial completa com fotos reais.
 - [x] Accessibility: `prefers-reduced-motion` dispara skip de animações, ARIA em accordion, alt em imagens.
 - [x] Performance: só `transform`/`opacity`, `backdrop-filter` só em nav fixo, cursor desativado em touch, safety timeout 5s no preloader.
 - [x] Verificação visual no browser com Playwright: 11 screenshots de todas seções — 0 erros no console.
+
+### V2.1 — Reposicionamento editorial (foco paliativa)
+- [x] Removida ênfase em Pneumologia em toda a LP — agora aparece apenas como menção discreta em "Especialidade" no bloco Contato.
+- [x] Title, meta description, OG e schema.org reescritos focando exclusivamente em Medicina Paliativa.
+- [x] Schema `medicalSpecialty` reduzido a `["Palliative Care"]`; `knowsAbout` expandido com termos paliativos (Alívio de Sintomas, Suporte à Família, Comunicação de Más Notícias, Diretivas Antecipadas).
+- [x] Preloader meta, hero kicker e hero sub: tirado "Pneumologista", reforçada identidade paliativa.
+- [x] Seção Sobre: lead reescrito, parágrafos reformulados, removida menção a "olhar clínico preciso da pneumologia".
+- [x] Stats: trocada "Especialidades complementares (2)" por "Foco no paciente e família (100%)".
+- [x] Seção Especialidades renomeada para "Cuidado paliativo em cada etapa da doença". Card 02 (Pneumologia clínica com asma/DPOC/apneia) substituído por "Família & Comunicação".
+- [x] Trajetória: item "Residência em Pneumologia" virou "Clínica hospitalar" (texto neutro). Adicionado item "Prática — Cuidado contínuo" antes do "Hoje", para reforçar paliativa.
+- [x] FAQ: pergunta "Quando devo consultar uma pneumologista?" trocada por "Quem se beneficia de cuidados paliativos?".
+- [x] Footer description reescrito sem ênfase em pneumo.
 
 ## Pending (pré-deploy)
 - [ ] Substituir `5500000000000` pelo número real do WhatsApp.
@@ -77,7 +89,8 @@ Done — LP v2 cinematográfica editorial completa com fotos reais.
 - JPGs grandes (precisam otimização antes do deploy).
 
 ## Resume From Here
-LP v2 cinematográfica está completa e foi verificada visualmente (11 screenshots, 0 erros de console). Para deploy:
+LP v2.1 com reposicionamento editorial concluído — pneumologia reduzida a menção discreta, todo o resto da copy expandido em torno de Medicina Paliativa. Próximos passos pré-deploy:
 1. Trocar `5500000000000` pelo número real e `CRM-XX XXXXXX` pelo CRM/RQE reais.
 2. Otimizar fotos: comprimir e gerar WebP (imagens hoje pesam ~2-4 MB cada).
 3. Deploy via Vercel (`vercel deploy`).
+4. (Opcional) Verificação visual com Playwright das seções alteradas (Especialidades, Trajetória, FAQ, Contato, Footer).
