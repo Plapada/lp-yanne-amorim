@@ -45,6 +45,7 @@ Done — LP v2.2 com refinamentos editoriais da Dra. Yanne: pneumologia reintrod
 - [x] Removidas todas as menções "todo o Brasil" (FAQ, contato, footer).
 - [x] Contato/Footer/meta/schema: identidade ajustada para **Pneumologista e Paliativista**; schema `medicalSpecialty` agora `["Pulmonology","Palliative Care"]`.
 - [x] Verificação visual com Playwright (hero, sobre, especialidades, trajetória, faq, contato) — 0 erros no console.
+- [x] Fix do enquadramento da capa: `object-position` ajustado de `28% 28%` → `30% 8%` (a foto nova tem o rosto no terço superior; em telas largas o rosto cortava). Verificado em 5 viewports (1920, 1440, 2560 ultrawide, celular em pé e deitado).
 
 ### V2.1 — Reposicionamento editorial (foco paliativa)
 - [x] Removida ênfase em Pneumologia em toda a LP — agora aparece apenas como menção discreta em "Especialidade" no bloco Contato.

@@ -293,7 +293,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 28% 28%;
+      /* Foto retrato 2:3 — rosto no terço superior-esquerdo.
+         Y baixo mantém o rosto visível quando telas largas cortam verticalmente. */
+      object-position: 30% 8%;
       transform: scale(1.05);
       animation: heroZoom 18s ease-out forwards;
     }
