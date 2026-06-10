@@ -61,7 +61,8 @@ Done — LP v2.2 com refinamentos editoriais da Dra. Yanne: pneumologia reintrod
 ## Pending (pré-deploy)
 - [ ] Substituir `5500000000000` pelo número real do WhatsApp.
 - [ ] Inserir CRM e RQE reais (buscar `CRM-XX XXXXXX`).
-- [ ] Comprimir JPGs e converter para WebP — atenção especial à nova capa `DGP07090.jpg` (~20 MB!).
+- [x] Capa do hero otimizada: `DGP07090` 19 MB → AVIF 322 KB / WebP 662 KB / JPEG 791 KB (2560×3840, `<picture>` com fallback).
+- [ ] Comprimir as demais fotos (galeria/retratos, ~2–4 MB cada em `assets/fotos/`) e gerar AVIF/WebP.
 - [ ] Deploy em Vercel.
 
 ## Decisions Made
