@@ -4,7 +4,7 @@
 Landing page cinematográfica para Dra. Yanne Amorim — Médica Pneumologista Paliativista, com identidade visual completa da marca e fotos reais.
 
 ## Status
-Done — LP v2 cinematográfica + reposicionamento editorial focado em Medicina Paliativa (pneumologia reduzida a menção discreta).
+Done — LP v2.2 com refinamentos editoriais da Dra. Yanne: pneumologia reintroduzida com peso (especialização, lista de doenças, FAQ, contato), nova foto de capa e bloco de palestras.
 
 ## Completed
 ### V1 (arquivada)
@@ -34,6 +34,18 @@ Done — LP v2 cinematográfica + reposicionamento editorial focado em Medicina 
 - [x] Performance: só `transform`/`opacity`, `backdrop-filter` só em nav fixo, cursor desativado em touch, safety timeout 5s no preloader.
 - [x] Verificação visual no browser com Playwright: 11 screenshots de todas seções — 0 erros no console.
 
+### V2.2 — Refinamentos editoriais (revisão da Dra. Yanne)
+- [x] Nova foto de capa do hero: `assets/fotos/DGP07090.jpg` (substituiu DGP07386.JPG). Enquadramento conferido no browser — ok.
+- [x] Stat de experiência: 10 → **26 anos dedicados à medicina**.
+- [x] Sobre: "sempre tentei" → "sempre busquei"; "tudo o que resta" → "tudo o que importa"; "dor e sintomas" → "dor e outros sintomas"; removido "em qualquer fase da doença".
+- [x] Card Cuidados Paliativos: "melhora" → "busca melhorar"; "dor e outros sintomas"; "paciente e seus cuidadores"; lista de doenças com **pulmonares avançadas em primeiro** + "qualquer outra condição crônica ameaçadora à vida".
+- [x] Card Família & Comunicação: "à família e cuidadores"; "alinhamento de plano avançado de cuidado".
+- [x] Trajetória: "Clínica hospitalar" → "Clínica médica"; Especialização agora "Pneumologia e Medicina Paliativa"; Prática com mesmas categorias de doença do card e sem "do diagnóstico até onde for preciso ir"; novo item **Palestras — Educação e divulgação**; "Hoje" reescrito sucinto ("Consultas presenciais e telemedicina", sem descrição e sem "todo o Brasil").
+- [x] FAQ: respostas reescritas; pergunta "quem se beneficia" agora com **ênfase em doenças pulmonares avançadas (DPOC, fibrose, enfisema)** e neurológicas reduzidas; aside "restou" → "ficou".
+- [x] Removidas todas as menções "todo o Brasil" (FAQ, contato, footer).
+- [x] Contato/Footer/meta/schema: identidade ajustada para **Pneumologista e Paliativista**; schema `medicalSpecialty` agora `["Pulmonology","Palliative Care"]`.
+- [x] Verificação visual com Playwright (hero, sobre, especialidades, trajetória, faq, contato) — 0 erros no console.
+
 ### V2.1 — Reposicionamento editorial (foco paliativa)
 - [x] Removida ênfase em Pneumologia em toda a LP — agora aparece apenas como menção discreta em "Especialidade" no bloco Contato.
 - [x] Title, meta description, OG e schema.org reescritos focando exclusivamente em Medicina Paliativa.
@@ -49,8 +61,7 @@ Done — LP v2 cinematográfica + reposicionamento editorial focado em Medicina 
 ## Pending (pré-deploy)
 - [ ] Substituir `5500000000000` pelo número real do WhatsApp.
 - [ ] Inserir CRM e RQE reais (buscar `CRM-XX XXXXXX`).
-- [ ] Confirmar anos de experiência (hoje `data-count="10"`) e atualizar se necessário.
-- [ ] Comprimir JPGs (~2-4 MB cada) e converter para WebP.
+- [ ] Comprimir JPGs e converter para WebP — atenção especial à nova capa `DGP07090.jpg` (~20 MB!).
 - [ ] Deploy em Vercel.
 
 ## Decisions Made
@@ -89,8 +100,7 @@ Done — LP v2 cinematográfica + reposicionamento editorial focado em Medicina 
 - JPGs grandes (precisam otimização antes do deploy).
 
 ## Resume From Here
-LP v2.1 com reposicionamento editorial concluído — pneumologia reduzida a menção discreta, todo o resto da copy expandido em torno de Medicina Paliativa. Próximos passos pré-deploy:
+LP v2.2 concluída e enviada para `main` — refinamentos editoriais da Dra. Yanne aplicados (pneumologia reforçada, nova capa, bloco de palestras, copy revisada) e verificados no browser. Próximos passos pré-deploy:
 1. Trocar `5500000000000` pelo número real e `CRM-XX XXXXXX` pelo CRM/RQE reais.
-2. Otimizar fotos: comprimir e gerar WebP (imagens hoje pesam ~2-4 MB cada).
+2. Otimizar fotos: comprimir e gerar WebP — prioridade para `assets/fotos/DGP07090.jpg` (~20 MB).
 3. Deploy via Vercel (`vercel deploy`).
-4. (Opcional) Verificação visual com Playwright das seções alteradas (Especialidades, Trajetória, FAQ, Contato, Footer).
