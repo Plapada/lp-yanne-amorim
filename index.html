@@ -432,42 +432,6 @@
     .btn-ghost:hover { background: var(--ink); color: var(--cream); }
     .btn-ghost:hover .arrow { border-color: var(--cream); }
 
-    /* HERO — signature pill (bottom left) */
-    .hero__meta {
-      position: absolute;
-      left: var(--px);
-      bottom: 56px;
-      display: flex; align-items: center; gap: 14px;
-      padding: 12px 16px;
-      background: rgba(31, 45, 61, 0.35);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(248, 239, 215, 0.18);
-      border-radius: 999px;
-      opacity: 0;
-      animation: fadeInUp 1s var(--ease-out) 1.6s forwards;
-    }
-    .hero__meta svg { width: 26px; height: 28px; }
-    .hero__meta-text {
-      font-family: var(--ff-serif);
-      font-style: italic;
-      font-size: 0.92rem;
-      line-height: 1.2;
-      color: var(--cream);
-    }
-    .hero__meta-text small {
-      font-family: var(--ff-sans);
-      font-style: normal;
-      font-size: 0.58rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(248, 239, 215, 0.6);
-      display: block;
-    }
-    @media (max-width: 680px) {
-      .hero__meta { display: none; }
-    }
-
     .hero__scroll {
       position: absolute;
       bottom: 24px; left: var(--px);
@@ -1378,6 +1342,11 @@
     <section class="hero">
       <div class="hero__bg" id="heroBg">
         <picture>
+          <!-- Telas largas (desktop/landscape): versão panorâmica com fundo estendido — evita o close exagerado do crop -->
+          <source media="(min-aspect-ratio: 4/3)" srcset="assets/fotos/DGP07090-wide.avif" type="image/avif">
+          <source media="(min-aspect-ratio: 4/3)" srcset="assets/fotos/DGP07090-wide.webp" type="image/webp">
+          <source media="(min-aspect-ratio: 4/3)" srcset="assets/fotos/DGP07090-wide.jpg" type="image/jpeg">
+          <!-- Telas verticais (mobile/tablet): retrato original -->
           <source srcset="assets/fotos/DGP07090.avif" type="image/avif">
           <source srcset="assets/fotos/DGP07090.webp" type="image/webp">
           <img src="assets/fotos/DGP07090.jpg" alt="Dra. Yanne Amorim" fetchpriority="high" decoding="async">
@@ -1405,17 +1374,6 @@
               <svg width="9" height="9" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
           </a>
-        </div>
-      </div>
-
-      <div class="hero__meta">
-        <svg viewBox="0 0 200 220" fill="none">
-          <path d="M20 210 L20 100 A80 80 0 0 1 180 100 L180 210 Z" stroke="#f8efd7" stroke-width="4" fill="none"/>
-          <path d="M85 105 C80 98 70 98 70 108 C70 118 88 128 100 135 C112 128 130 118 130 108 C130 98 120 98 115 105 C110 100 90 100 85 105 Z" fill="#d9a658"/>
-        </svg>
-        <div class="hero__meta-text">
-          Aqui, você não está só.
-          <small>Manifesto</small>
         </div>
       </div>
 
