@@ -46,6 +46,8 @@ Done — LP v2.2 com refinamentos editoriais da Dra. Yanne: pneumologia reintrod
 - [x] Contato/Footer/meta/schema: identidade ajustada para **Pneumologista e Paliativista**; schema `medicalSpecialty` agora `["Pulmonology","Palliative Care"]`.
 - [x] Verificação visual com Playwright (hero, sobre, especialidades, trajetória, faq, contato) — 0 erros no console.
 - [x] Fix do enquadramento da capa: `object-position` ajustado de `28% 28%` → `30% 8%` (a foto nova tem o rosto no terço superior; em telas largas o rosto cortava). Verificado em 5 viewports (1920, 1440, 2560 ultrawide, celular em pé e deitado).
+- [x] Fix do zoom excessivo em desktop: gerada versão panorâmica `DGP07090-wide` (3840×2400, 1.6:1) com fundo do estúdio estendido via Sharp (faixa da parede esticada + blur, sem tocar no rosto). Servida via `<source media="(min-aspect-ratio: 4/3)">` — mobile em pé mantém o retrato. AVIF 143 KB / WebP 284 KB / JPEG 350 KB.
+- [x] Removido o badge "Aqui, você não está só / Manifesto" do hero (HTML + CSS `.hero__meta`), a pedido.
 
 ### V2.1 — Reposicionamento editorial (foco paliativa)
 - [x] Removida ênfase em Pneumologia em toda a LP — agora aparece apenas como menção discreta em "Especialidade" no bloco Contato.
